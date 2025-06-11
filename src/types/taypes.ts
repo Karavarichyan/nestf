@@ -2,9 +2,9 @@ export interface IUserData {
   email: string
   password: string
 }
-export interface IUser{
+export interface IUser {
   id: number
-  email:string
+  email: string
   token: string
 }
 export interface IResponseUser {
@@ -15,18 +15,30 @@ export interface IResponseUser {
   password: string
 }
 export interface IResponseUserData {
-  token : string
+  token: string
   user: IResponseUser
 }
 
-export interface ICategory{
+export interface ITransaction {
+  amount: number
+  createdAt: string
+  updatedAt: string
+  title: string
+  type: string
+  id: number
+  category: ICategory
+}
+export interface ICategory {
   title: string
   id: number
   createdAt: string
-  updatedAt:string
-  transactions:[]
+  updatedAt: string
+  transactions?: []
 }
 
-export interface IResponseTransactionLouder{
+export interface IResponseTransactionLouder {
   categories: ICategory[]
+  transactions:ITransaction[]
+  totalIncome: number
+  totalExpanse: number
 }
